@@ -1,0 +1,22 @@
+<div class="filters-container">
+  <label for="status-filter">Status:</label>
+  <select id="status-filter" (change)="onStatusChange($event)">
+    <option value="all">All</option>
+    <option value="completed">Completed</option>
+    <option value="active">Active</option>
+  </select>
+
+  <label for="due-date-filter">Due Date:</label>
+  <select id="due-date-filter" (change)="onDueDateChange($event)">
+    <option value="all">All</option>
+    <option value="today">Today</option>
+    <option value="tomorrow">Tomorrow</option>
+  </select>
+
+  <label for="sort-by-filter">Sort By:</label>
+  <select id="sort-by-filter" (change)="onSortByChange($event)">
+    <option value="title-asc">Title A-Z</option>
+    <option value="title-desc">Title Z-A</option>
+    <option value="due-date-asc">Due Date (Earliest First)</option>
+    <option value="due-date-desc">Due Date (Latest First)</option>
+  </select>

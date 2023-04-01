@@ -1,0 +1,20 @@
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 1rem;
+    justify-content: center;
+    margin:1rem;
+    }
+    
+    .filters-container > label {
+    margin-right: 0.5rem;
+    font-weight: bold;
+    }
+    
+    .filters-container > select {
+    margin-right: 1rem;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+    }

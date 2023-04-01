@@ -1,0 +1,37 @@
+
+<app-add-task></app-add-task>
+
+
+<app-task-filter
+  (statusFilter)="applyStatusFilter($event)"
+  (dueDateFilter)="applyDueDateFilter($event)"
+  (sortBy)="applySortBy($event)"
+></app-task-filter>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Priority</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of filteredTasks">
+      <td>{{ task.name }}</td>
+      <td>{{ task.dueDate | date:'dd/MM/yyyy' }}</td>
+      <td>{{ task.status }}</td>
+      <td>{{ task.priority }}</td>
+      <td>
+        <button (click)="markAsComplete(task)">Complete</button>
+        <button (click)="deleteTask(task.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-edit-task *ngIf="taskService.editingTask | async as task"></app-edit-task>
+
